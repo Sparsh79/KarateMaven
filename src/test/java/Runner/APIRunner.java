@@ -14,7 +14,8 @@ import java.util.Collection;
 import java.util.List;
 import static org.junit.Assert.assertTrue;
 
-@KarateOptions(features = "classpath:Sample", tags = "~@ignore")
+//@KarateOptions(features = "classpath:Sample", tags = "~@ignore")
+@KarateOptions(features = "classpath:Sample")
 
 public class APIRunner {
 
