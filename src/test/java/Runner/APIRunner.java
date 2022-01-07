@@ -29,7 +29,7 @@ public class APIRunner {
          * And also, Runner.path(), can take multiple string parameters, hence we can provide multiple packages here.
          * There is an optional reportDir() method if you want to customize the directory to which the HTML, XML and JSON files will be output.
          */
-        Results results = Runner.parallel(getClass(), 2);
+        Results results = Runner.parallel(getClass(), 1);
         generateReport(results.getReportDir());
         assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
     }
