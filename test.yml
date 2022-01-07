@@ -14,4 +14,4 @@ outputs:
 run:
   path: /bin/bash
   args:
-    - karate/test-script.sh
+    - karate/run.sh
