@@ -3,19 +3,19 @@ package Runner;
 import com.intuit.karate.KarateOptions;
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
-import org.junit.Test;
-import org.apache.commons.io.FileUtils;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
+import org.apache.commons.io.FileUtils;
+import org.junit.Test;
+
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
 import static org.junit.Assert.assertTrue;
 
-//@KarateOptions(features = "classpath:Sample", tags = "~@ignore")
-@KarateOptions(features = "classpath:Sample")
+@KarateOptions(features = "classpath:Sample", tags = "~@ignore")
 
 public class APIRunner {
 

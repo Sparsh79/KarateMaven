@@ -1,16 +1,33 @@
-resources:
-  - name: karate
-    type: git
-    source:
-      uri: https://github.com/Sparsh79/KarateMaven.git
-      branch: master
-
 jobs:
-  - name: mavenjob
-    serial: true
+  - name: test
     plan:
       - get: karate
         trigger: true
-      - task: mvn-test
-        privileged: true
-        file: karate/test.yml
+      - config:
+          caches:
+            - path: $HOME/.m2/repository
+          container_limits: {}
+          image_resource:
+            name: ""
+            source:
+              repository: maven
+              tag: 3.8.4-openjdk-8-slim
+            type: registry-image
+          inputs:
+            - name: karate
+          platform: linux
+          run:
+            path: /bin/sh
+            args:
+              - karate/run.sh
+            user: root
+        task: run-tests
+    public: true
+
+resources:
+  - icon: github
+    name: karate
+    source:
+      uri: https://github.com/Sparsh79/KarateMaven.git
+      branch: master
+    type: git
