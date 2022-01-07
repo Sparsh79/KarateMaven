@@ -1,0 +1,16 @@
+resources:
+  - name: karate
+    type: git
+    source:
+      uri: https://github.com/Sparsh79/KarateMaven.git
+      branch: master
+
+jobs:
+  - name: mavenjob
+    serial: true
+    plan:
+      - get: karate
+        trigger: true
+      - task: mvn-test
+        privileged: true
+        file: karate/test.yml

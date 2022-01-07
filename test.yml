@@ -1,0 +1,17 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: maven
+    tag: latest
+
+inputs:
+  - name: karate
+outputs:
+  - name: mvn-output
+
+run:
+  path: /bin/bash
+  args:
+    - karate/test-script.sh
