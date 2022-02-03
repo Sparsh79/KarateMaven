@@ -31,3 +31,4 @@ resources:
       uri: https://github.com/Sparsh79/KarateMaven.git
       branch: master
     type: git
+
